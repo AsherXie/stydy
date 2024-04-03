@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+    <style>
+        h1 {
+            color: red;
+        }
+        ssb-qw {
+            cursor: pointer;
+            color: peru;
+            h1 {
+                color: blueviolet;
+            }
+        }
+        ssb-qw:hover {
+            opacity: .8;
+        }
+        [type="uo"]::part(h1) {
+            font-size: 25px
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 每10s刷新一次 -->
+    <meta http-equiv="refresh" content="10">
+    <!-- After 10s bowser refresh then redict google -->
+    <meta http-equiv="refresh" content="10 url=https://google.com">
+    <!-- If you use http request, the broswe throw error -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <!-- like webpack's public_path -->
+    <base target="_blank" href="https://machinelearningworkshop.com" />
+
+    <!-- 减少dns查询时间，不会与服务器连接，提前解析dns -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>我是个好人</legend>
+            <rating>
+                <input type="radio" name="rating" value="1" aria-label="1 star" required/>
+                <input type="radio" name="rating" value="2" aria-label="2 stars"/>
+                <input type="radio" name="rating" value="3" aria-label="3 stars"/>
+                <input type="radio" name="rating" value="4" aria-label="4 stars"/>
+                <input type="radio" name="rating" value="5" aria-label="5 stars"/>
+              </rating>
+        </fieldset>
+    </form>
+    
+
+    <a href="/a">213213</a>
+
+    <!-- 模板文件 -->
+    <template id="template">
+        <style>
+            
+                h1 {
+                    color: aquamarine;
+                }
+            
+        </style>
+        <h1>213123123</h1>
+    </template>
+    <ssb-qw id="qqw"></ssb-qw>
+    <ssb-qw type="uo"></ssb-qw>
+    <ssb-qw ></ssb-qw>
+    <ssb-qw ></ssb-qw>
+    <ssb-qw ></ssb-qw>
+
+</body>
+<script>
+    const template = document.getElementById('template').content;
+    // document.body.appendChild(template);
+    customElements.define('ssb-qw', class extends HTMLElement {
+        constructor() {
+            super();
+            const shadowRoot = this.attachShadow({mode: 'closed'})
+            shadowRoot.appendChild(template.cloneNode(true));
+        }
+    })
+</script>
+</html>

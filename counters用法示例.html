@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            counter-reset: item;
+        }
+        li {
+            counter-increment: item 1;
+            &::before {
+                content: '123';
+            }
+          
+            &:nth-of-type(5) {
+                /* 实现飞跃床界山 */
+                /* counter-set : item 10; */
+            }
+        }
+        /* li::after {
+            content: counters(item, '-', upper-roman);
+        } */
+    </style>
+</head>
+<body>
+    <ul>
+        <li>123213
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+        <li><ul>
+            <li></li>
+            <li></li>
+        </ul></li>
+        <li><ul>
+            <li><ul>
+                <li></li>
+                <li></li>
+            </ul></li>
+            <li><ul>
+                <li></li>
+                <li><ul>
+                    <li></li>
+                    <li><ul>
+                        <li></li>
+                        <li><ul>
+                            <li></li>
+                            <li><ul>
+                                <li></li>
+                                <li><ul>
+                                    <li></li>
+                                    <li><ul>
+                                        <li></li>
+                                        <li></li>
+                                    </ul></li>
+                                </ul></li>
+                            </ul></li>
+                        </ul></li>
+                    </ul></li>
+                </ul></li>
+            </ul></li>
+        </ul></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </ul>
+</body>
+</html>
